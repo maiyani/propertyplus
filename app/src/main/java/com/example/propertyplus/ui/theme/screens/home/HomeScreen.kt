@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.propertyplus.R
+import com.example.propertyplus.navigation.ROUT_DETAIL
 
 
 @Composable
@@ -71,9 +72,8 @@ fun HomeScreen(navController: NavController){
             fontSize = 20.sp
         )
 
-        Spacer(modifier = Modifier.height(100.dp))
 
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { navController.navigate(ROUT_DETAIL) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 30.dp, end = 30.dp)
