@@ -13,10 +13,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -47,6 +50,8 @@ import androidx.navigation.compose.rememberNavController
 
 
 import com.example.propertyplus.R
+import com.example.propertyplus.navigation.ROUT_DETAIL
+import com.example.propertyplus.navigation.ROUT_INTENT
 import com.example.propertyplus.ui.theme.newGreen
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -71,8 +76,22 @@ fun DetailsScreen(navController: NavController){
             }
 
         )
+        Spacer(modifier = Modifier.width(20.dp))
 
-
+        //search bar
+        var search by remember {
+            mutableStateOf("") }
+        OutlinedTextField(
+            value = search,
+            onValueChange = {search=it},
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 20.dp, end = 20.dp),
+            leadingIcon = { Icon(imageVector = Icons.Default.Search,
+                contentDescription = "Search")},
+            placeholder = { Text(text = "Whats Your location")}
+        )
+        //end of search bar
 
 
         Box(modifier = Modifier
@@ -97,20 +116,7 @@ fun DetailsScreen(navController: NavController){
 
         Spacer(modifier = Modifier.width(20.dp))
 
-        //search bar
-        var search by remember {
-            mutableStateOf("") }
-        OutlinedTextField(
-            value = search,
-            onValueChange = {search=it},
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 20.dp, end = 20.dp),
-            leadingIcon = { Icon(imageVector = Icons.Default.Search,
-                contentDescription = "Search")},
-            placeholder = { Text(text = "Whats Your location")}
-        )
-        //end of search bar
+
 
         Spacer(modifier = Modifier.width(20.dp))
 
@@ -185,17 +191,26 @@ fun DetailsScreen(navController: NavController){
                 }
             }
             //CARD END FOUR
-            Spacer(modifier = Modifier.width(20.dp))
 
 
 
         }
 
+        Spacer(modifier = Modifier.height(20.dp))
 
+        Button(onClick = { navController.navigate(ROUT_INTENT) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 30.dp, end = 30.dp)
+                .height(50.dp),
+            colors = ButtonDefaults.buttonColors(Color.Magenta),
+            shape = RoundedCornerShape(10.dp)
 
+        )
 
-
-
+        {
+            Text(text = "next")
+        }
 
 
 

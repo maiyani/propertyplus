@@ -348,8 +348,8 @@ val bottomNavItems = listOf(
 
 
         BottomNavItem(
-            title = "Login",
-            route="login",
+            title = "Details",
+            route="DetailsScreen",
             selectedIcon=Icons.Filled.Person,
             unselectedIcon=Icons.Outlined.Person,
             hasNews = true,
@@ -357,8 +357,8 @@ val bottomNavItems = listOf(
         ),
 
         BottomNavItem(
-            title = "Signup",
-            route="signup",
+            title = "Property",
+            route="PropertyScreen",
             selectedIcon=Icons.Filled.Face,
             unselectedIcon=Icons.Outlined.Face,
             hasNews = true,
