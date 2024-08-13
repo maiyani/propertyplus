@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.provider.MediaStore
 import android.telecom.Call
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -37,6 +39,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -61,6 +64,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.propertyplus.R
 import com.example.propertyplus.navigation.ROUT_DETAIL
+import com.example.propertyplus.ui.theme.newGreen
+import com.example.propertyplus.ui.theme.newYellow
 import com.example.propertyplus.ui.theme.screens.property.bottomNavItems
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -74,7 +79,7 @@ fun IntentScreen(navController: NavController) {
         Scaffold(
             bottomBar = {
                 NavigationBar(
-                    containerColor = Color.Magenta
+                    containerColor = newYellow
                 ){
                     bottomNavItems.forEachIndexed { index, bottomNavItem ->
                         NavigationBarItem(
@@ -115,7 +120,7 @@ fun IntentScreen(navController: NavController) {
             topBar = {
                 TopAppBar(
                     title = { Text(text = "PropertyPlus") },
-                    colors = TopAppBarDefaults.mediumTopAppBarColors(Color.Magenta),
+                    colors = TopAppBarDefaults.mediumTopAppBarColors(Color.Gray),
                 )
             },
 
@@ -189,26 +194,23 @@ fun IntentScreen(navController: NavController) {
                     Spacer(modifier = Modifier.height(10.dp))
 
                     //STK
-                    val mContext= LocalContext.current
-                    Button(onClick ={
+                    val mContext = LocalContext.current
+                    OutlinedButton(onClick ={
                         val simToolKitLaunchIntent =
                             mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
                         simToolKitLaunchIntent?.let { mContext.startActivity(it) }
 
                     },
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 30.dp, end = 30.dp)
-                            .height(50.dp),
-                        colors = ButtonDefaults.buttonColors(Color.Magenta),
-                        shape = RoundedCornerShape(10.dp)
+                            .size(width = 380.dp, height = 70.dp)
+                            .padding(start = 20.dp, end = 20.dp, top = 20.dp),
+                        shape = CutCornerShape(5.dp),
+                        border = BorderStroke(3.dp, Color.Black)
+                    ) {
+                        Text(text = "PAY VIA MPESA")
 
-                    )
-
-                    {
-                        Text(text = "STK")
                     }
-                    //STK
+
 
                     Spacer(modifier = Modifier.height(10.dp))
 

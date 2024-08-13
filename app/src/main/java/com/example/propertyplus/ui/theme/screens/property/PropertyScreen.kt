@@ -15,7 +15,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Face
@@ -134,6 +136,7 @@ fun PropertyScreen(navController: NavController){
             content = @Composable {
                 Column(
                     modifier = Modifier
+                        .verticalScroll(rememberScrollState())
                         .fillMaxSize()
                         .padding(top = 80.dp, start = 20.dp),
                 ) {
@@ -351,8 +354,8 @@ val bottomNavItems = listOf(
 
 
     BottomNavItem(
-        title = "Details",
-        route="details",
+        title = "signup",
+        route="signup",
         selectedIcon=Icons.Filled.Person,
         unselectedIcon=Icons.Outlined.Person,
         hasNews = true,
