@@ -147,6 +147,8 @@ fun PropertyScreen(navController: NavController){
                         Card(modifier = Modifier
                             .height(180.dp)
                             .width(200.dp)) {
+                            Spacer(modifier = Modifier.height(10.dp))
+
                             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                                 Image(
                                     painter = painterResource(id = R.drawable.home),

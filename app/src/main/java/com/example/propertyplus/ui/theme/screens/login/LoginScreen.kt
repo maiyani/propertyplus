@@ -67,7 +67,7 @@ fun LoginScreen(navController: NavController){
 
         Text(
             text = "Welcome Back!",
-            fontSize = 60.sp,
+            fontSize = 50.sp,
             fontFamily = FontFamily.Cursive,
             color = Color.Magenta
         )
@@ -118,7 +118,7 @@ fun LoginScreen(navController: NavController){
         val context = LocalContext.current
         val authViewModel = AuthViewModel(navController, context)
 
-        Button(onClick = {  },
+        Button(onClick = { authViewModel.login(email, password) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 30.dp, end = 30.dp)

@@ -52,6 +52,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.propertyplus.R
 import com.example.propertyplus.navigation.ROUT_DETAIL
 import com.example.propertyplus.navigation.ROUT_INTENT
+import com.example.propertyplus.navigation.ROUT_PROPERTY
 import com.example.propertyplus.ui.theme.newGreen
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -198,7 +199,7 @@ fun DetailsScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { navController.navigate(ROUT_INTENT) },
+        Button(onClick = { navController.navigate(ROUT_PROPERTY) },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 30.dp, end = 30.dp)
