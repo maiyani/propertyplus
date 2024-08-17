@@ -36,6 +36,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.propertyplus.R
 import com.example.propertyplus.navigation.ROUT_HOME
 import com.example.propertyplus.navigation.ROUT_PROPERTY
+import com.example.propertyplus.navigation.VIEW_PRODUCTS_URL
 import com.example.propertyplus.ui.theme.lightgreen
 import com.example.propertyplus.ui.theme.newYellow
 
@@ -201,6 +202,7 @@ fun DashboardScreen(navController: NavController){
                 Row (modifier = Modifier.padding(20.dp)){
                     //card 1
                     Card (modifier = Modifier
+                        .clickable { navController.navigate(VIEW_PRODUCTS_URL) }
                         .width(160.dp)
                         .height(180.dp)){
 
@@ -208,7 +210,7 @@ fun DashboardScreen(navController: NavController){
                             Spacer(modifier = Modifier.height(15.dp))
 
                             Box (modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
-                                Image(painter = painterResource(id = R.drawable.dashboard),
+                                Image(painter = painterResource(id = R.drawable.view),
                                     contentDescription ="",
                                     modifier = Modifier.size(70.dp)
                                 )
@@ -216,7 +218,7 @@ fun DashboardScreen(navController: NavController){
                             Spacer(modifier = Modifier.height(15.dp))
 
                             Text(
-                                text ="Home",
+                                text ="View Products",
                                 fontSize = 18.sp,
                                 modifier = Modifier.fillMaxWidth(),
                                 textAlign = TextAlign.Center
@@ -229,6 +231,7 @@ fun DashboardScreen(navController: NavController){
 
                     //card 1
                     Card (modifier = Modifier
+                        .clickable { navController.navigate(VIEW_PRODUCTS_URL) }
                         .width(160.dp)
                         .height(180.dp)){
 
@@ -236,7 +239,7 @@ fun DashboardScreen(navController: NavController){
                             Spacer(modifier = Modifier.height(15.dp))
 
                             Box (modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
-                                Image(painter = painterResource(id = R.drawable.dashboard),
+                                Image(painter = painterResource(id = R.drawable.upload),
                                     contentDescription ="",
                                     modifier = Modifier.size(70.dp)
                                 )
@@ -244,7 +247,7 @@ fun DashboardScreen(navController: NavController){
                             Spacer(modifier = Modifier.height(15.dp))
 
                             Text(
-                                text ="Home",
+                                text ="Upload Product",
                                 fontSize = 18.sp,
                                 modifier = Modifier.fillMaxWidth(),
                                 textAlign = TextAlign.Center
